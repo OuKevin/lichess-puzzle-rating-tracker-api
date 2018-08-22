@@ -1,2 +1,2 @@
-# lichess-puzzle-rating-tracker
-Tracks Lichess puzzle rating per day
+# lichess-puzzle-rating-tracker-api
+API for Tracking Lichess puzzle rating per day
