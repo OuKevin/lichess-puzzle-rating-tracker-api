@@ -1,0 +1,36 @@
+{
+  "name": "lichess-puzzle-rating-tracker-api",
+  "version": "1.0.0",
+  "description": "API for tracking puzzle rating from Lichess",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OuKevin/lichess-puzzle-rating-tracker.git"
+  },
+  "keywords": [
+    "chess",
+    "puzzle",
+    "rating",
+    "tracker"
+  ],
+  "author": "Kevin Ou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OuKevin/lichess-puzzle-rating-tracker/issues"
+  },
+  "homepage": "https://github.com/OuKevin/lichess-puzzle-rating-tracker#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "express": "^4.16.3"
+  }
+}
