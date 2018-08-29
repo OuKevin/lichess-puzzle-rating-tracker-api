@@ -1,2 +1,2 @@
 # lichess-puzzle-rating-tracker-api
-API for Tracking Lichess puzzle rating per day
+Repository for storing lambdas used for lichess puzzle rating tracker
