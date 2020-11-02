@@ -14,12 +14,12 @@ exports.handler = async () => {
     await dynamoDocumentClient.put({
       TableName: tableName,
       Item: {
-        date: String(new Date()),
+        creation_date: String(new Date().toISOString()),
         user_id: userId,
         rating,
       },
     }).promise();
   } catch (error) {
-    console.warn('Error:', error);
+    console.warn('Error', error);
   }
 };

@@ -1,0 +1,34 @@
+{
+  "command": {
+    "bootstrap": {
+      "ignoreChanges": [
+        "package-lock.json"
+      ]
+    },
+    "exec": {
+      "ignoreChanges": [
+        "package-lock.json"
+      ]
+    },
+    "run": {
+      "ignoreChanges": [
+        "package-lock.json"
+      ]
+    },
+    "publish": {
+      "ignoreChanges": [
+        "package-lock.json"
+      ]
+    },
+    "version": {
+      "allowBranch": ["master"],
+      "ignoreChanges": [
+        "package-lock.json"
+      ]
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent"
+}

@@ -1,38 +1,31 @@
 {
-  "name": "lichess-puzzle-rating-tracker-api",
+  "name": "root",
   "version": "1.0.0",
-  "description": "API for tracking puzzle rating from Lichess",
-  "main": "index.js",
-  "scripts": {
-    "dev": "node index",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OuKevin/lichess-puzzle-rating-tracker.git"
-  },
-  "keywords": [
-    "chess",
-    "puzzle",
-    "rating",
-    "tracker"
-  ],
-  "author": "Kevin Ou",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/OuKevin/lichess-puzzle-rating-tracker/issues"
-  },
-  "homepage": "https://github.com/OuKevin/lichess-puzzle-rating-tracker#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "eslint": "^5.4.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.5.0"
-  },
   "dependencies": {
-    "aws-sdk": "^2.304.0",
-    "babel-core": "^6.26.3",
-    "superagent": "^3.8.3"
+    "aws-sdk": "~2.761.0",
+    "dotenv": "~8.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.8.4",
+    "@babel/plugin-transform-runtime": "~7.11.5",
+    "@babel/preset-env": "~7.8.4",
+    "@babel/runtime": "~7.11.2",
+    "babel-loader": "~8.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "lerna": "~3.20.2"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "bootstrap:ci": "lerna bootstrap --since --include-merged-tags",
+    "build:ci": "lerna run build --since --include-merged-tags",
+    "lint": "lerna run lint",
+    "lint:ci": "lerna run lint --since --include-merged-tags",
+    "test": "lerna run test",
+    "test:ci": "lerna run test --since --include-merged-tags",
+    "publish": "lerna exec --since --include-merged-tags -- node '../../publish.js'",
+    "publish:local": "NODE_ENV=development lerna exec --since --include-merged-tags -- node '../../publish.js'",
+    "version": "lerna version patch --yes"
   }
 }
