@@ -10,11 +10,6 @@ const fs = require('fs');
 const packageJSONPath = `${path.resolve()}/package.json`;
 const packageJSON = require(packageJSONPath);
 
-const {
-  AWS_REGION,
-  LAMBDA_ROLE,
-} = process.env;
-
 const createNewLambda = async (lambda, lambdaName, zipPath) => {
   try {
     await lambda.createFunction({
@@ -23,7 +18,7 @@ const createNewLambda = async (lambda, lambdaName, zipPath) => {
       },
       FunctionName: lambdaName,
       Handler: 'index.default',
-      Role: LAMBDA_ROLE,
+      Role: 'arn:aws:iam::764074376504:role/lambda-full-access',
       Runtime: 'nodejs12.x',
       Timeout: 15,
       Tags: {
@@ -51,7 +46,7 @@ const updateExistingLambda = async (lambda, lambdaName, zipPath) => {
   const lambdaName = packageJSON.name;
   const lambda = new AWS.Lambda({
     apiVersion: '2015-03-31',
-    region: 'us-east-1',
+    region: 'us-east-2',
   });
 
   const zipPath = `${path.resolve()}/dist/archive.zip`;
