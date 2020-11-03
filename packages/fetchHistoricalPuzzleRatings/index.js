@@ -9,7 +9,7 @@ exports.handler = async (event, context, callback) => {
     const dynamoDocumentClient = new AWS.DynamoDB.DocumentClient({
       region,
       apiVersion: '2018-05-21',
-    });;;;
+    });
     const params = {
       TableName: tableName,
       ProjectionExpression: 'creation_date, rating',

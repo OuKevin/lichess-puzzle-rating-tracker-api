@@ -1,21 +1,20 @@
-const AWS = require('aws-sdk');
-const superagent = require('superagent');
+import AWS from 'aws-sdk';
+import superagent from 'superagent';
 
 exports.handler = async () => {
   try {
-    const { tableName, region, userId } = process.env;
-    const userInfo = await superagent.get(`https://lichess.org/api/user/${userId}`);
+    const userInfo = await superagent.get('https://lichess.org/api/user/kevinou');
     const { rating } = userInfo.body.perfs.puzzle;
     const dynamoDocumentClient = new AWS.DynamoDB.DocumentClient({
-      region,
+      region: 'us-east-2',
       apiVersion: '2018-05-21',
     });
 
     await dynamoDocumentClient.put({
-      TableName: tableName,
+      TableName: 'Ratings',
       Item: {
         creation_date: String(new Date().toISOString()),
-        user_id: userId,
+        user_id: 'kevinou',
         rating,
       },
     }).promise();

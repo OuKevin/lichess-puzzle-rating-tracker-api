@@ -27,7 +27,7 @@ const createNewLambda = async (lambda, lambdaName, zipPath) => {
       Runtime: 'nodejs12.x',
       Timeout: 15,
       Tags: {
-        'project': 'lichess-puzzle-rating',
+        project: 'lichess-puzzle-rating',
       },
     }).promise();
   } catch (error) {
