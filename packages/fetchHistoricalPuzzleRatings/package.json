@@ -4,8 +4,7 @@
   "description": "API for tracking puzzle rating from Lichess",
   "main": "index.js",
   "scripts": {
-    "dev": "node index",
-    "test": "jest",
+    "build": "NODE_ENV=production && (mkdir dist || rm dist/* || rm -rd dist ) && webpack && cd dist && zip -qr archive.zip index.js",
     "lint": "eslint \"@(index)/**/*.js\""
   },
   "repository": {
@@ -30,6 +29,8 @@
     "@babel/preset-env": "^7.11.5",
     "aws-sdk": "^2.784.0",
     "eslint": "^7.10.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }

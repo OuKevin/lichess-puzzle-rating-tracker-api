@@ -10,6 +10,8 @@ const fs = require('fs');
 const packageJSONPath = `${path.resolve()}/package.json`;
 const packageJSON = require(packageJSONPath);
 
+console.log(process.env.AWS_ACCESS_KEY)
+
 const createNewLambda = async (lambda, lambdaName, zipPath) => {
   try {
     await lambda.createFunction({
@@ -17,7 +19,7 @@ const createNewLambda = async (lambda, lambdaName, zipPath) => {
         ZipFile: fs.readFileSync(zipPath),
       },
       FunctionName: lambdaName,
-      Handler: 'index.default',
+      Handler: 'index.handler',
       Role: 'arn:aws:iam::764074376504:role/lambda-full-access',
       Runtime: 'nodejs12.x',
       Timeout: 15,
