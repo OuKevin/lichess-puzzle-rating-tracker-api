@@ -2,7 +2,7 @@ import sortBy from 'lodash/sortBy';
 
 const AWS = require('aws-sdk');
 
-exports.handler = async (event, context, callback) => {
+export default async (event, context, callback) => {
   try {
     const dynamoDocumentClient = new AWS.DynamoDB.DocumentClient({
       region: 'us-east-2',

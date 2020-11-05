@@ -19,7 +19,7 @@ const createNewLambda = async (lambda, lambdaName, zipPath) => {
         ZipFile: fs.readFileSync(zipPath),
       },
       FunctionName: lambdaName,
-      Handler: 'index.handler',
+      Handler: 'index.default',
       Role: 'arn:aws:iam::764074376504:role/lambda-full-access',
       Runtime: 'nodejs12.x',
       Timeout: 15,

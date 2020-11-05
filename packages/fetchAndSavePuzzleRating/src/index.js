@@ -1,7 +1,7 @@
 import AWS from 'aws-sdk';
 import superagent from 'superagent';
 
-exports.handler = async () => {
+export default async () => {
   try {
     const userInfo = await superagent.get('https://lichess.org/api/user/kevinou');
     const { rating } = userInfo.body.perfs.puzzle;
