@@ -10,8 +10,6 @@ const fs = require('fs');
 const packageJSONPath = `${path.resolve()}/package.json`;
 const packageJSON = require(packageJSONPath);
 
-console.log(process.env.AWS_ACCESS_KEY)
-
 const createNewLambda = async (lambda, lambdaName, zipPath) => {
   try {
     await lambda.createFunction({
