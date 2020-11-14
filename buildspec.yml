@@ -15,6 +15,6 @@ phases:
 
   post_build:
     commands:
-      - npm version patch -m 'code build'
+      - npm version patch -m 'code build version bump'
       - git push --set-upstream origin master
       - git push origin refs/tags/*:refs/tags/*
