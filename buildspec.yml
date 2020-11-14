@@ -7,6 +7,9 @@ phases:
       nodejs: 12
   build:
     commands:
+      - git config --global user.name "lichess-mechanical-user"
+      - git config --global user.email ""
+      
       - npm ci
       - npm run bootstrap:ci
       - npm run build:ci || exit 1
