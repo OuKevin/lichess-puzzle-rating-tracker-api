@@ -1,6 +1,5 @@
 import sortBy from 'lodash/sortBy';
-
-const AWS = require('aws-sdk');
+import AWS from 'aws-sdk';
 
 export default async (event, context, callback) => {
   try {
@@ -15,11 +14,18 @@ export default async (event, context, callback) => {
       ExpressionAttributeValues: { ':userId': 'kevinou' },
     };
     const { Items } = await dynamoDocumentClient.scan(params).promise();
+    const { numberOfDaysDisplayed } = event;
     const sortedItems = sortBy(Items, 'creation_date');
+    const ratingsToBeDisplayed = numberOfDaysDisplayed
+      ? sortedItems.slice(
+        sortedItems.length - numberOfDaysDisplayed,
+        sortedItems.length,
+      )
+      : sortedItems;
     const response = {
       statusCode: 200,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify(sortedItems),
+      body: JSON.stringify(ratingsToBeDisplayed),
     };
 
     callback(null, response);
