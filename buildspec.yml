@@ -12,7 +12,7 @@ phases:
       
       - npm ci
       - npm run bootstrap:ci
-      - npm run build:ci || exit 1
+      - npm run build:ci
       - npm run publish
       - npm run version
 
