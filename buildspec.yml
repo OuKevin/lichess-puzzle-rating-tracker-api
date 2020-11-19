@@ -9,6 +9,7 @@ phases:
     commands:
       - git config --global user.name "lichess-mechanical-user"
       - git config --global user.email ""
+      - git checkout master
       
       - npm ci
       - npm run bootstrap:ci
