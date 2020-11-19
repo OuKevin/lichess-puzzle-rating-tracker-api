@@ -1,6 +1,6 @@
 {
   "name": "scrape-puzzle-rating",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API to scrape ratings from Lichess Api",
   "main": "index.js",
   "scripts": {
