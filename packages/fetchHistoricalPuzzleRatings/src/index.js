@@ -14,7 +14,8 @@ export default async (event, context, callback) => {
       ExpressionAttributeValues: { ':userId': 'kevinou' },
     };
     const { Items } = await dynamoDocumentClient.scan(params).promise();
-    const { numberOfDaysDisplayed } = event;
+    const { numberOfDaysDisplayed } = event.pathParameters;
+    console.log(numberOfDaysDisplayed);
     const sortedItems = sortBy(Items, 'creation_date');
     const ratingsToBeDisplayed = numberOfDaysDisplayed
       ? sortedItems.slice(
