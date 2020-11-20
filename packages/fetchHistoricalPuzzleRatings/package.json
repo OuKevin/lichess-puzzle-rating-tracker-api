@@ -1,6 +1,6 @@
 {
   "name": "fetch-historical-puzzle-rating",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "API for tracking puzzle rating from Lichess",
   "main": "index.js",
   "scripts": {
