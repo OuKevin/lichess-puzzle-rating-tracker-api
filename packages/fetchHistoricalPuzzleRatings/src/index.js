@@ -15,10 +15,11 @@ export default async (event, context, callback) => {
     };
     const { Items } = await dynamoDocumentClient.scan(params).promise();
     const { numberOfDaysDisplayed } = event.queryStringParameters;
+    const parsedNumberOfDays = parseInt(numberOfDaysDisplayed, 10);
     const sortedItems = sortBy(Items, 'creation_date');
-    const ratingsToBeDisplayed = numberOfDaysDisplayed
+    const ratingsToBeDisplayed = parsedNumberOfDays
       ? sortedItems.slice(
-        sortedItems.length - numberOfDaysDisplayed,
+        sortedItems.length - parsedNumberOfDays,
         sortedItems.length,
       )
       : sortedItems;
