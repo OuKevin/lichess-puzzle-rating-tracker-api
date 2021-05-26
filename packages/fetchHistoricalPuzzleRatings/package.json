@@ -29,7 +29,7 @@
     "@babel/preset-env": "^7.11.5",
     "aws-sdk": "^2.784.0",
     "eslint": "^7.10.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }
