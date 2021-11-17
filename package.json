@@ -1,6 +1,6 @@
 {
   "name": "root",
-  "version": "1.0.211",
+  "version": "1.0.212",
   "dependencies": {
     "aws-sdk": "^2.784.0",
     "dotenv": "^8.2.0"
